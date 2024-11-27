@@ -26,6 +26,8 @@ id_usuario:{
         model: Usuario,
         key: 'id_usuario',
     },
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE',
 },
 data_emprestimo:{
     type: DataTypes.DATE,
@@ -37,7 +39,6 @@ data_devolucao_prevista:{
 },
 data_devolucao_real:{
     type: DataTypes.DATE,
-    allowNull: false,
 },
 status:{
     type: DataTypes.ENUM('emprestado', 'devolvido', 'atrasado'),

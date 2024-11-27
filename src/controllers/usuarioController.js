@@ -6,7 +6,7 @@ async function listarUsuarios(req, res) {
         const listaUsuarios = await Usuario.findAll();
         res.json(listaUsuarios);
     } catch (error) {
-        res.status(400).json({error: error.menssage});
+        res.status(400).json({error: error.message});
     }
 }
 async function buscarUsuario(req, res) {
@@ -15,7 +15,7 @@ async function buscarUsuario(req, res) {
         const usuarioAlvo = await Usuario.findByPk(id);
         res.status(201).json(usuarioAlvo);
     } catch (error) {
-        res.status(400).json({error: error.menssage});
+        res.status(400).json({error: error.message});
     }    
 }
 async function criarUsuario(req, res) {
@@ -24,7 +24,7 @@ async function criarUsuario(req, res) {
         const criacaoUsuario = await Usuario.create({ nome, endereco, email, telefone });
         res.status(201).json(criacaoUsuario);
     } catch (error) {
-        res.status(400).json({error: error.menssage});
+        res.status(400).json({error: error.message});
     }
 }
 async function atualizarUsuario(req,res) {
@@ -36,7 +36,7 @@ async function atualizarUsuario(req,res) {
         await atualizacaoUsuario.save();
         res.status(201).json(atualizacaoUsuario);
     } catch (error) {
-        res.status(400).json({error: error.menssage});
+        res.status(400).json({error: error.message});
     }
 }
 async function deletaUsuario(req,res) {
@@ -46,7 +46,7 @@ async function deletaUsuario(req,res) {
         await delecaoUsuario.destroy();
         res.status(201).json(delecaoUsuario);
     } catch (error) {
-        res.status(400).json({error: error.menssage});
+        res.status(400).json({error: error.message});
     }
 }
 export { listarUsuarios, buscarUsuario, criarUsuario, atualizarUsuario, deletaUsuario };

@@ -6,7 +6,7 @@ async function listarLivros(req, res) {
         const listaLivros = await Livro.findAll();
         res.json(listaLivros);
     } catch (error) {
-        res.status(400).json({error: error.menssage});
+        res.status(400).json({error: error.message});
     }
 }
 async function buscarLivro(req, res) {
@@ -15,7 +15,7 @@ async function buscarLivro(req, res) {
         const livroAlvo = await Livro.findByPk(id);
         res.status(201).json(livroAlvo);
     } catch (error) {
-        res.status(400).json({error: error.menssage});
+        res.status(400).json({error: error.message});
     }    
 }
 async function criarLivro(req, res) {
@@ -24,7 +24,7 @@ async function criarLivro(req, res) {
         const criacaoLivro = await Livro.create({ titulo, autor, genero, ano_publicacao });
         res.status(201).json(criacaoLivro);
     } catch (error) {
-        res.status(400).json({error: error.menssage});
+        res.status(400).json({error: error.message});
     }
 }
 async function atualizarLivro(req,res) {
@@ -36,7 +36,7 @@ async function atualizarLivro(req,res) {
         await atualizacaoLivro.save();
         res.status(201).json(atualizacaoLivro);
     } catch (error) {
-        res.status(400).json({error: error.menssage});
+        res.status(400).json({error: error.message});
     }
 }
 async function deletaLivro(req,res) {
@@ -46,7 +46,7 @@ async function deletaLivro(req,res) {
         await delecaoLivro.destroy();
         res.status(201).json(delecaoLivro);
     } catch (error) {
-        res.status(400).json({error: error.menssage});
+        res.status(400).json({error: error.message});
     }
 }
 export { listarLivros, buscarLivro, criarLivro, atualizarLivro, deletaLivro };
